@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-IN" data-scheme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Only two network origins: Telegram's SDK and GitHub's API (where the ciphertext lives).
+     style-src allows inline styles only because Telegram's SDK injects a <style> tag inside Telegram Web;
+     the app itself never writes markup from data (everything is textContent). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://telegram.org; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>Arth</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232f5fe0'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<div id="app" aria-live="polite">
+  <main class="screen" aria-busy="true">
+    <div class="art" aria-hidden="true">₹</div>
+    <h2>Arth</h2>
+    <p class="lead">Opening your summary…</p>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p class="lead">Arth needs JavaScript to decrypt your summary on this device.</p></noscript>
+</body>
+</html>
